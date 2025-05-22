@@ -1,23 +1,25 @@
 package modele;
 
-import controleurs.Operateur;
+
+
 import java.time.LocalDate;
 import java.time.LocalTime;
-
 
 
 public class Evenement {
     
     private LocalDate date;
     private LocalTime heure;
+    private int duree; //en minute
     private Operateur operateur;
     private String cause;
     
-    public Evenement(LocalDate d, LocalTime h, Operateur o, String c) {
-        this.date=d;
-        this.heure=h;
-        this.operateur=o;
-        this.cause=c;
+    public Evenement(LocalDate date, LocalTime heure, int duree, Operateur operateur, String cause) {
+        this.date=date;
+        this.heure=heure;
+        this.duree=duree;
+        this.operateur=operateur;
+        this.cause=cause;
     }
     
     
@@ -27,6 +29,10 @@ public class Evenement {
     
     public LocalTime getHeure() {
         return this.heure;
+    }
+    
+    public int getDuree() {
+        return this.duree;
     }
     
     public Operateur getOperateur() {
@@ -44,6 +50,10 @@ public class Evenement {
     
     public void setHeure(LocalTime h) {
         this.heure=h;
+    }
+    
+    public void setDuree(int d) {
+        this.duree=d;
     }
     
     public void setOperateur(Operateur o) {
